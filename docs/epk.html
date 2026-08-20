@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ilustres Patilludos — EPK</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rye&family=Oswald:wght@400;500;600;700&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --negro:#14100c; --negro2:#1d1712; --madera:#241b13;
+    --crema:#f2e8d5; --crema2:#d9cbb0;
+    --rojo:#c8342a; --rojov:#e04338; --oro:#d8a33e; --oroc:#e8bf6a;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  @page{ size:A4; margin:0; }
+  html,body{ background:var(--negro); }
+  body{ font-family:'Barlow',sans-serif; color:var(--crema); line-height:1.5;
+    -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .page{ width:210mm; min-height:297mm; padding:13mm 16mm 13mm; position:relative;
+    background:radial-gradient(ellipse at 50% 0%,rgba(216,163,62,.08) 0%,transparent 55%),var(--negro);
+    page-break-after:always; overflow:hidden; }
+  .page:last-child{ page-break-after:auto; }
+  .page::after{ content:"★ ILUSTRES PATILLUDOS · EPK · PRESS KIT ★";
+    position:absolute; bottom:9mm; left:0; right:0; text-align:center;
+    font-family:'Oswald',sans-serif; font-size:7.5pt; letter-spacing:2px;
+    color:rgba(216,163,62,.5); text-transform:uppercase; }
+
+  .cover{ display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; }
+  .cover img.logo{ width:70mm; height:70mm; border-radius:50%; border:4px solid var(--oro);
+    box-shadow:0 0 0 6px var(--negro),0 0 0 8px rgba(216,163,62,.35); margin-bottom:12mm; }
+  .cover h1{ font-family:'Rye',serif; font-weight:400; font-size:36pt; line-height:1; color:var(--crema); text-shadow:3px 3px 0 var(--rojo); }
+  .cover .doc-type{ font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:8px;
+    font-size:13pt; color:var(--oroc); margin-top:8mm; padding:3mm 6mm; border:2px solid var(--oro); }
+  .cover .sub{ font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:3px; font-size:10pt; color:var(--crema2); margin-top:7mm; }
+  .cover .tag{ font-style:italic; color:var(--oroc); font-size:11pt; margin-top:10mm; }
+
+  .kick{ font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:4px; font-size:8.5pt; color:var(--rojov); margin-bottom:2mm; }
+  h2{ font-family:'Rye',serif; font-weight:400; font-size:20pt; color:var(--oro); line-height:1.1; margin-bottom:5mm; }
+  h2::after{ content:""; display:block; width:20mm; height:3px; margin-top:2.5mm;
+    background:repeating-linear-gradient(90deg,var(--rojo) 0 4mm,transparent 4mm 6mm); }
+  h3{ font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:2px; font-size:11pt; color:var(--oroc); margin:4mm 0 2mm; }
+  p{ font-size:10pt; color:var(--crema2); margin-bottom:2.5mm; }
+  p strong,b{ color:var(--crema); }
+  .lead{ font-size:11pt; color:var(--crema); }
+
+  .foto{ width:100%; border:3px solid var(--oro); box-shadow:5px 6px 0 rgba(200,52,42,.4); margin:5mm 0; display:block; }
+
+  .datos{ display:flex; gap:6mm; margin-top:4mm; }
+  .datos .col{ flex:1; }
+  ul.plain{ list-style:none; }
+  ul.plain li{ font-size:9.5pt; color:var(--crema2); padding:1.8mm 0; border-bottom:1px solid rgba(242,232,213,.1); }
+  ul.plain li:last-child{ border-bottom:none; }
+  ul.plain li b{ color:var(--oroc); font-family:'Oswald',sans-serif; font-size:8.5pt; letter-spacing:1px; text-transform:uppercase; display:block; }
+
+  .discos{ display:flex; gap:6mm; margin:3mm auto 0; max-width:122mm; }
+  .disco{ flex:1; }
+  .disco img{ width:100%; border:3px solid var(--oro); box-shadow:4px 4px 0 rgba(200,52,42,.4); }
+  .disco .t{ font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:1px; font-size:9.5pt; color:var(--crema); margin-top:2.5mm; font-weight:600; }
+  .disco .m{ font-size:8pt; color:var(--oroc); font-family:'Oswald',sans-serif; letter-spacing:1px; text-transform:uppercase; }
+
+  .videos{ margin-top:3mm; }
+  .videos .v{ display:flex; align-items:center; gap:4mm; padding:2mm 0; border-bottom:1px solid rgba(242,232,213,.1); font-size:9.5pt; }
+  .videos .v:last-child{ border-bottom:none; }
+  .videos .v .play{ color:var(--rojov); font-size:12pt; }
+  .videos .v b{ color:var(--crema); }
+  .videos .v .u{ color:var(--oroc); font-size:8.5pt; margin-left:auto; }
+
+  .contacto-box{ border:2px solid var(--oro); padding:6mm; margin-top:3mm; background:var(--negro2); }
+  .contacto-box .em{ font-family:'Rye',serif; color:var(--oroc); font-size:13pt; }
+
+  .cita{ border-left:3px solid var(--rojo); background:rgba(216,163,62,.05); padding:4mm 5mm; font-style:italic; color:var(--crema); font-size:10pt; margin:4mm 0; }
+</style>
+</head>
+<body>
+
+<!-- PORTADA -->
+<section class="page cover">
+  <img class="logo" src="../assets/logo.jpg" alt="Logo Ilustres Patilludos">
+  <h1>ILUSTRES<br>PATILLUDOS</h1>
+  <div class="doc-type">EPK</div>
+  <div class="sub">Electronic Press Kit</div>
+  <div class="tag">Los Reyes del Chigrebilly · Xixón · desde 2011</div>
+</section>
+
+<!-- BIO + DATOS -->
+<section class="page">
+  <p class="kick">Press kit</p>
+  <h2>Ilustres Patilludos</h2>
+  <p class="lead"><strong>Los auténticos y genuinos reyes del Chigrebilly.</strong> Desde Gijón y desde 2011, mezclan rock and roll, música tradicional asturiana y canción de chigre en un género propio: sonido compacto, directo y una fiesta asegurada sobre el escenario.</p>
+  <img class="foto" src="../assets/banda_header.jpg" alt="Ilustres Patilludos">
+  <div class="datos">
+    <div class="col">
+      <ul class="plain">
+        <li><b>Origen</b>Gijón / Xixón, Asturias</li>
+        <li><b>En activo desde</b>2011</li>
+        <li><b>Género</b>Chigrebilly (rockabilly + folk asturiano + celtic punk)</li>
+      </ul>
+    </div>
+    <div class="col">
+      <ul class="plain">
+        <li><b>Formación</b>6 músicos: voz/acústica, mandolina-banjo, bajo, violín, eléctrica, batería</li>
+        <li><b>Premios</b>Nominados AMAS: Mejor Directo 2018 · Mejor Videoclip 2020</li>
+      </ul>
+    </div>
+  </div>
+  <div class="cita">«Sonido no apto a puristas.» Chigrebilly con un pie en Nashville, otro en Dublín y los dos plantados en un llagar asturiano.</div>
+</section>
+
+<!-- MÚSICA + VÍDEOS + CONTACTO -->
+<section class="page">
+  <p class="kick">Material</p>
+  <h2>Música y vídeos</h2>
+
+  <h3>Discografía</h3>
+  <div class="discos">
+    <div class="disco"><img src="../assets/cover_chigrebilly.jpg" alt="Chigrebilly"><div class="t">Chigrebilly</div><div class="m">LP · 2017</div></div>
+    <div class="disco"><img src="../assets/cover_espicha.jpg" alt="Espicha o muerre"><div class="t">Espicha o muerre / Chalaneru</div><div class="m">Singles · 2019</div></div>
+  </div>
+
+  <h3>Videoclips oficiales</h3>
+  <div class="videos">
+    <div class="v"><span class="play">▶</span><b>Sidra en el llagar</b><span class="u">youtu.be/PCQ0moQJkFk</span></div>
+    <div class="v"><span class="play">▶</span><b>Borracho, Jodido y Tatuado</b><span class="u">youtu.be/GSngH6CLJ7I</span></div>
+    <div class="v"><span class="play">▶</span><b>Espicha o Muerre</b> (con Xune Elipe)<span class="u">youtu.be/8XyXyWSQyDE</span></div>
+    <div class="v"><span class="play">▶</span><b>Chigrebilly</b><span class="u">youtu.be/4cGYRP_Lvlk</span></div>
+  </div>
+
+  <h3>Enlaces y redes</h3>
+  <div class="datos">
+    <div class="col"><ul class="plain">
+      <li><b>Spotify</b>Ilustres Patilludos</li>
+      <li><b>Apple Music</b>Ilustres Patilludos</li>
+      <li><b>YouTube</b>Ilustres Patilludos</li>
+    </ul></div>
+    <div class="col"><ul class="plain">
+      <li><b>Instagram</b>@ilustrespatilludos</li>
+      <li><b>Facebook</b>los.ilustres.patilludos</li>
+      <li><b>X / Twitter</b>@ipatilludos</li>
+    </ul></div>
+  </div>
+
+  <div class="contacto-box">
+    <p class="kick" style="margin-bottom:3mm">Contacto · prensa y contratación</p>
+    <p class="em">ilustrespatilludos@gmail.com</p>
+  </div>
+</section>
+
+</body>
+</html>

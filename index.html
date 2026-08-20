@@ -273,6 +273,26 @@
     color:var(--crema);font-size:1.05rem;line-height:1.7;
   }
   .cita-equipo strong{font-style:normal}
+  /* Documentación */
+  .docs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;margin-top:1rem}
+  @media(max-width:820px){.docs-grid{grid-template-columns:1fr}}
+  .doc-card{
+    display:flex;flex-direction:column;align-items:center;text-align:center;
+    background:var(--negro2);border:1px solid rgba(216,163,62,.3);
+    padding:2.2rem 1.5rem;position:relative;transition:border-color .2s;
+  }
+  .doc-card:hover{border-color:var(--oro)}
+  .doc-ic{
+    width:64px;height:64px;display:flex;align-items:center;justify-content:center;
+    border:2px solid var(--oro);border-radius:50%;margin-bottom:1.2rem;
+  }
+  .doc-ic svg{width:30px;height:30px;fill:none;stroke:var(--oro-claro);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .doc-card h3{
+    font-family:'Rye',serif;font-weight:400;font-size:1.35rem;color:var(--crema);margin-bottom:.6rem;
+  }
+  .doc-card p{font-size:.92rem;color:var(--crema-suave);margin-bottom:1.4rem;flex:1}
+  .doc-card .btn{font-size:.82rem;padding:.7rem 1.4rem}
+
   footer{
     border-top:2px solid var(--oro);padding:2rem 1.2rem;text-align:center;
     font-size:.85rem;color:var(--crema-suave);
@@ -291,6 +311,7 @@
       <li><a href="#discos" data-i18n="nav.discos">Discos</a></li>
       <li><a href="#videos" data-i18n="nav.videos">Vídeos</a></li>
       <li><a href="#directo" data-i18n="nav.directo">Directo</a></li>
+      <li><a href="#documentacion" data-i18n="nav.docs">Documentación</a></li>
       <li><a href="#contacto" data-i18n="nav.contacto">Contacto</a></li>
     </ul>
     <div class="lang" role="group" aria-label="Llingua / Idioma">
@@ -439,6 +460,31 @@
   </div>
 </div>
 
+<section id="documentacion">
+  <p class="kicker" data-i18n="docs.kicker">Para promotores y prensa</p>
+  <h2 data-i18n="docs.h2">Documentación</h2>
+  <div class="docs-grid">
+    <div class="doc-card">
+      <div class="doc-ic"><svg viewBox="0 0 24 24"><path d="M6 2h8l4 4v16H6z"/><path d="M14 2v4h4"/><path d="M9 12h6M9 16h6"/></svg></div>
+      <h3 data-i18n="doc1.t">Dossier</h3>
+      <p data-i18n="doc1.d">Información completa de la banda: bio, discografía, trayectoria y contacto.</p>
+      <a class="btn" href="docs/Ilustres_Patilludos_dossier.pdf" target="_blank" rel="noopener" data-i18n="docs.btn">Descargar PDF</a>
+    </div>
+    <div class="doc-card">
+      <div class="doc-ic"><svg viewBox="0 0 24 24"><path d="M5 3v18M12 3v18M19 3v18"/><circle cx="5" cy="9" r="2" fill="var(--oro-claro)" stroke="none"/><circle cx="12" cy="15" r="2" fill="var(--oro-claro)" stroke="none"/><circle cx="19" cy="7" r="2" fill="var(--oro-claro)" stroke="none"/></svg></div>
+      <h3 data-i18n="doc2.t">Rider</h3>
+      <p data-i18n="doc2.d">Especificaciones técnicas para conciertos: formación, plano de escenario y lista de canales.</p>
+      <a class="btn" href="docs/Ilustres_Patilludos_rider.pdf" target="_blank" rel="noopener" data-i18n="docs.btn">Descargar PDF</a>
+    </div>
+    <div class="doc-card">
+      <div class="doc-ic"><svg viewBox="0 0 24 24"><path d="M3 11v2a1 1 0 0 0 1 1h3l6 4V6L7 10H4a1 1 0 0 0-1 1z"/><path d="M17 8a4 4 0 0 1 0 8"/></svg></div>
+      <h3 data-i18n="doc3.t">EPK</h3>
+      <p data-i18n="doc3.d">Electronic Press Kit para medios y promotores.</p>
+      <a class="btn" href="docs/Ilustres_Patilludos_epk.pdf" target="_blank" rel="noopener" data-i18n="docs.btn">Descargar PDF</a>
+    </div>
+  </div>
+</section>
+
 <section id="contacto">
   <p class="kicker" data-i18n="contacto.kicker">Contratación y redes</p>
   <h2 data-i18n="contacto.h2">Contautu</h2>
@@ -474,6 +520,7 @@
     "nav.discos":       {ast:"Discos", es:"Discos"},
     "nav.videos":       {ast:"Vídeos", es:"Vídeos"},
     "nav.directo":      {ast:"Directu", es:"Directo"},
+    "nav.docs":         {ast:"Documentación", es:"Documentación"},
     "nav.contacto":     {ast:"Contautu", es:"Contacto"},
     "hero.kicker":      {ast:"Xixón · Asturies · dende 2011", es:"Gijón · Asturias · desde 2011"},
     "hero.sub":         {ast:"Los auténticos y xenuinos <em>reis del Chigrebilly</em>", es:"Los auténticos y genuinos <em>reyes del Chigrebilly</em>"},
@@ -519,6 +566,15 @@
     "hito1.lbl":        {ast:"Naz la banda en Xixón", es:"Nace la banda en Xixón"},
     "hito2.lbl":        {ast:"Nomaos Meyor Directu 2018 y Meyor Videoclip 2020", es:"Nominados Mejor Directo 2018 y Mejor Videoclip 2020"},
     "hito3.lbl":        {ast:"Chigres, sales y festivales per toa España", es:"Chigres, salas y festivales por toda España"},
+    "docs.kicker":      {ast:"Pa promotores y prensa", es:"Para promotores y prensa"},
+    "docs.h2":          {ast:"Documentación", es:"Documentación"},
+    "doc1.t":           {ast:"Dossier", es:"Dossier"},
+    "doc1.d":           {ast:"Información completa de la banda: bio, discografía, trayeutoria y contautu.", es:"Información completa de la banda: bio, discografía, trayectoria y contacto."},
+    "doc2.t":           {ast:"Rider", es:"Rider"},
+    "doc2.d":           {ast:"Especificaciones técniques pa conciertos: formación, plano d'escenariu y llista de canales.", es:"Especificaciones técnicas para conciertos: formación, plano de escenario y lista de canales."},
+    "doc3.t":           {ast:"EPK", es:"EPK"},
+    "doc3.d":           {ast:"Electronic Press Kit pa medios y promotores.", es:"Electronic Press Kit para medios y promotores."},
+    "docs.btn":         {ast:"Descargar PDF", es:"Descargar PDF"},
     "contacto.kicker":  {ast:"Contratación y redes", es:"Contratación y redes"},
     "contacto.h2":      {ast:"Contautu", es:"Contacto"},
     "contacto.cita":    {ast:"En 2011, un comandu compuestu por cuatro de los meyores patilludos de Xixón foi condenáu por un delitu que sí cometieren: amestar el rock and roll col cantar de chigre. Nun tardaron en fugase del chigre nel que taben recluyíos. Güei, buscaos entá polos puristes, sobreviven como músicos de fortuna. Si tien usté un problema —una fiesta, una sala, un festival— y consigue alcontralos, quiciabes pueda contratar… a los <strong>Ilustres Patilludos</strong>.",

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ilustres Patilludos — Dossier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rye&family=Oswald:wght@400;500;600;700&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --negro:#14100c; --negro2:#1d1712; --madera:#241b13;
+    --crema:#f2e8d5; --crema2:#d9cbb0;
+    --rojo:#c8342a; --rojov:#e04338; --oro:#d8a33e; --oroc:#e8bf6a;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  @page{ size:A4; margin:0; }
+  html,body{ background:var(--negro); }
+  body{
+    font-family:'Barlow',sans-serif; color:var(--crema); line-height:1.55;
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+  .page{
+    width:210mm; min-height:297mm; padding:14mm 18mm 16mm; position:relative;
+    background:
+      radial-gradient(ellipse at 50% 0%,rgba(216,163,62,.08) 0%,transparent 55%),
+      var(--negro);
+    page-break-after:always; overflow:hidden;
+  }
+  .page:last-child{ page-break-after:auto; }
+  .page::after{
+    content:"★ ILUSTRES PATILLUDOS · CHIGREBILLY DENDE 2011 ★";
+    position:absolute; bottom:10mm; left:0; right:0; text-align:center;
+    font-family:'Oswald',sans-serif; font-size:8pt; letter-spacing:2.5px;
+    color:rgba(216,163,62,.5); text-transform:uppercase;
+  }
+
+  /* ---- Portada ---- */
+  .cover{ display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding-top:0; }
+  .cover img.logo{ width:78mm; height:78mm; border-radius:50%; border:4px solid var(--oro);
+    box-shadow:0 0 0 6px var(--negro),0 0 0 8px rgba(216,163,62,.35); margin-bottom:14mm; }
+  .cover h1{ font-family:'Rye',serif; font-weight:400; font-size:40pt; line-height:1; color:var(--crema);
+    text-shadow:3px 3px 0 var(--rojo); }
+  .cover .doc-type{ font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:10px;
+    font-size:15pt; color:var(--oroc); margin-top:9mm; padding:3mm 7mm; border:2px solid var(--oro); }
+  .cover .sub{ font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:4px;
+    font-size:11pt; color:var(--crema2); margin-top:8mm; }
+  .cover .tag{ font-style:italic; color:var(--oroc); font-size:12pt; margin-top:14mm; }
+
+  /* ---- Contenido ---- */
+  .kick{ font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:5px;
+    font-size:9pt; color:var(--rojov); margin-bottom:2mm; }
+  h2{ font-family:'Rye',serif; font-weight:400; font-size:23pt; color:var(--oro); line-height:1.1; margin-bottom:6mm; }
+  h2::after{ content:""; display:block; width:22mm; height:3px; margin-top:3mm;
+    background:repeating-linear-gradient(90deg,var(--rojo) 0 4mm,transparent 4mm 6mm); }
+  h3{ font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:2px; font-size:12pt;
+    color:var(--oroc); margin:5mm 0 2.5mm; }
+  p{ font-size:10.5pt; color:var(--crema2); margin-bottom:3.5mm; }
+  p strong,b{ color:var(--crema); }
+  .lead{ font-size:11.5pt; color:var(--crema); }
+
+  .foto{ width:100%; border:3px solid var(--oro); box-shadow:5px 6px 0 rgba(200,52,42,.4);
+    margin:6mm 0; display:block; }
+
+  .grid2{ display:flex; gap:8mm; }
+  .grid2>div{ flex:1; }
+
+  .discos{ display:flex; gap:7mm; margin-top:4mm; }
+  .disco{ flex:1; }
+  .disco img{ width:100%; border:3px solid var(--oro); box-shadow:4px 4px 0 rgba(200,52,42,.4); }
+  .disco .t{ font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:1px;
+    font-size:10pt; color:var(--crema); margin-top:3mm; font-weight:600; }
+  .disco .m{ font-size:8.5pt; color:var(--oroc); font-family:'Oswald',sans-serif; letter-spacing:1px; text-transform:uppercase; }
+
+  ul.plain{ list-style:none; }
+  ul.plain li{ font-size:10.5pt; color:var(--crema2); padding:2mm 0; border-bottom:1px solid rgba(242,232,213,.1); }
+  ul.plain li:last-child{ border-bottom:none; }
+  ul.plain li b{ color:var(--oroc); font-family:'Oswald',sans-serif; font-size:9pt; letter-spacing:1px; text-transform:uppercase; }
+
+  .miembros li{ display:flex; align-items:baseline; gap:4mm; }
+  .miembros li .rol{ color:var(--crema); }
+  .miembros li::before{ content:"♠"; color:var(--rojov); }
+
+  .tags{ display:flex; flex-wrap:wrap; gap:2mm; margin-top:3mm; }
+  .tags span{ font-family:'Oswald',sans-serif; font-size:8.5pt; text-transform:uppercase; letter-spacing:1px;
+    padding:1.5mm 3mm; color:var(--crema); border:1px solid rgba(216,163,62,.5); background:rgba(216,163,62,.07); }
+
+  .contacto-box{ border:2px solid var(--oro); padding:7mm; margin-top:6mm; background:var(--negro2); }
+  .contacto-box .em{ font-family:'Rye',serif; color:var(--oroc); font-size:15pt; }
+  .contacto-box p{ margin-bottom:1.5mm; }
+
+  .cita{ border-left:3px solid var(--rojo); background:rgba(216,163,62,.05); padding:5mm 6mm;
+    font-style:italic; color:var(--crema); font-size:10.5pt; margin:5mm 0; }
+</style>
+</head>
+<body>
+
+<!-- PORTADA -->
+<section class="page cover">
+  <img class="logo" src="../assets/logo.jpg" alt="Logo Ilustres Patilludos">
+  <h1>ILUSTRES<br>PATILLUDOS</h1>
+  <div class="doc-type">Dossier</div>
+  <div class="sub">Los Reyes del Chigrebilly</div>
+  <div class="tag">Xixón · Asturies · desde 2011</div>
+</section>
+
+<!-- LA BANDA -->
+<section class="page">
+  <p class="kick">¿Quiénes somos?</p>
+  <h2>La Banda</h2>
+  <p class="lead"><strong>Ilustres Patilludos</strong> nace en <strong>Gijón en 2011</strong> con una misión clara: juntar en un mismo escenario el rock and roll, la música tradicional asturiana y la canción de chigre. De esa mezcla imposible sale el <strong>Chigrebilly</strong>, un género propio con sonido compacto, simple y directo que se ha convertido en referencia de la música asturiana.</p>
+  <p>Irreverentes y gamberros por vocación, apuestan por <strong>el humor y la ironía como arma</strong> tanto en la música como en las letras. Sobre el escenario, su directo es una fiesta garantizada: no en vano fueron nominados a <strong>Mejor Directo en los Premios AMAS 2018</strong>.</p>
+  <img class="foto" src="../assets/banda_header.jpg" alt="Ilustres Patilludos">
+  <p>El Chigrebilly nació de chigre en chigre y pronto se les fue de las manos: nacieron y crecieron en la mítica <strong>Sala Savoy</strong>, desfilaron por múltiples salas, fiestas y festivales de toda España como el <strong>Tsunami Xixón</strong>, asaltaron con éxito la famosa <strong>Gruta 77</strong> de Madrid y acabaron plantándose en <strong>La Riviera</strong> junto a sus queridos y aún más admirados <strong>Los Berrones</strong>. Y a día de hoy siguen tocando allá donde los llamen.</p>
+</section>
+
+<!-- CHIGREBILLY + DISCOGRAFÍA -->
+<section class="page">
+  <p class="kick">El género</p>
+  <h2>¿Qué es el Chigrebilly?</h2>
+  <p>El <strong>Chigrebilly</strong> es la fusión del rockabilly con el chigre: rock and roll de patillas y actitud, tonada y folk de taberna, todo regado con sidra natural. Una forma de entender la música, la amistad y la vida en general — con un pie en Nashville, otro en Dublín y los dos bien plantados en un llagar asturiano.</p>
+  <div class="tags">
+    <span>Hank Williams</span><span>Johnny Cash</span><span>Dolly Parton</span><span>The Dubliners</span>
+    <span>The Pogues</span><span>The Chieftains</span><span>The Rumjacks</span><span>Dropkick Murphys</span>
+    <span>Tonada asturiana</span><span>Canción de chigre</span>
+  </div>
+
+  <h3>Discografía</h3>
+  <div class="discos">
+    <div class="disco">
+      <img src="../assets/cover_chigrebilly.jpg" alt="Chigrebilly">
+      <div class="t">Chigrebilly</div>
+      <div class="m">LP · 2017 · Asturcón Estudios</div>
+    </div>
+    <div class="disco">
+      <img src="../assets/cover_espicha.jpg" alt="Espicha o muerre">
+      <div class="t">Espicha o muerre / Chalaneru</div>
+      <div class="m">Singles · 2019 · Estudios Rojo</div>
+    </div>
+  </div>
+  <p style="margin-top:5mm">Los singles de 2019 llegaron con colaboraciones de lujo: <strong>Xune Elipe (Dixebra)</strong> en «Espicha o muerre» —videoclip nominado en los AMAS 2020— y <strong>Chus Pedro (Nuberu)</strong> en una versión muy particular del «Chalaneru».</p>
+
+  <h3>Palmarés y trayectoria</h3>
+  <ul class="plain">
+    <li><b>Premios AMAS</b> Nominados a Mejor Directo (2018) y Mejor Videoclip (2020)</li>
+    <li><b>Salas y festivales</b> Sala Savoy · Tsunami Xixón · Gruta 77 (Madrid) · La Riviera</li>
+    <li><b>Compartiendo cartel</b> Los Berrones · Celtas Cortos · Dixebra · Nuberu</li>
+  </ul>
+</section>
+
+<!-- FORMACIÓN + CONTACTO -->
+<section class="page">
+  <p class="kick">Sobre el escenario</p>
+  <h2>Formación</h2>
+  <ul class="plain miembros">
+    <li><span class="rol">Voz y guitarra acústica</span></li>
+    <li><span class="rol">Mandolina, banjo y coros</span></li>
+    <li><span class="rol">Bajo</span></li>
+    <li><span class="rol">Violín y coros</span></li>
+    <li><span class="rol">Guitarra eléctrica</span></li>
+    <li><span class="rol">Batería y coros</span></li>
+  </ul>
+
+  <h3>Escúchanos y síguenos</h3>
+  <ul class="plain">
+    <li><b>Spotify</b> Ilustres Patilludos</li>
+    <li><b>YouTube</b> Ilustres Patilludos — videoclips oficiales</li>
+    <li><b>Instagram</b> @ilustrespatilludos</li>
+    <li><b>Facebook</b> los.ilustres.patilludos</li>
+    <li><b>Web</b> ilustrespatilludos (web oficial)</li>
+  </ul>
+
+  <div class="contacto-box">
+    <p class="kick" style="margin-bottom:3mm">Contratación</p>
+    <p class="em">ilustrespatilludos@gmail.com</p>
+    <p style="margin-top:2mm">Para caché y disponibilidad, escríbenos y te preparamos presupuesto a medida para tu fiesta, sala o festival.</p>
+  </div>
+
+  <div class="cita">«Sonido no apto a puristas.» — así de claro. Chigrebilly del bueno, fiesta asegurada y sidra hasta el final. 🍾</div>
+</section>
+
+</body>
+</html>

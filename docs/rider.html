@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ilustres Patilludos — Rider</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rye&family=Oswald:wght@400;500;600;700&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --negro:#14100c; --negro2:#1d1712; --madera:#241b13;
+    --crema:#f2e8d5; --crema2:#d9cbb0;
+    --rojo:#c8342a; --rojov:#e04338; --oro:#d8a33e; --oroc:#e8bf6a;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  @page{ size:A4; margin:0; }
+  html,body{ background:var(--negro); }
+  body{ font-family:'Barlow',sans-serif; color:var(--crema); line-height:1.5;
+    -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .page{ width:210mm; min-height:297mm; padding:13mm 16mm 13mm; position:relative;
+    background:radial-gradient(ellipse at 50% 0%,rgba(216,163,62,.08) 0%,transparent 55%),var(--negro);
+    page-break-after:always; overflow:hidden; }
+  .page:last-child{ page-break-after:auto; }
+  .page::after{ content:"★ ILUSTRES PATILLUDOS · RIDER TÉCNICO Y DE HOSPITALITY ★";
+    position:absolute; bottom:9mm; left:0; right:0; text-align:center;
+    font-family:'Oswald',sans-serif; font-size:7.5pt; letter-spacing:2px;
+    color:rgba(216,163,62,.5); text-transform:uppercase; }
+
+  .cover{ display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; }
+  .cover img.logo{ width:70mm; height:70mm; border-radius:50%; border:4px solid var(--oro);
+    box-shadow:0 0 0 6px var(--negro),0 0 0 8px rgba(216,163,62,.35); margin-bottom:12mm; }
+  .cover h1{ font-family:'Rye',serif; font-weight:400; font-size:34pt; line-height:1; color:var(--crema); text-shadow:3px 3px 0 var(--rojo); }
+  .cover .doc-type{ font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:7px;
+    font-size:13pt; color:var(--oroc); margin-top:8mm; padding:3mm 6mm; border:2px solid var(--oro); }
+  .cover .sub{ font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:3px; font-size:10pt; color:var(--crema2); margin-top:7mm; }
+  .cover .tag{ font-style:italic; color:var(--oroc); font-size:11pt; margin-top:10mm; }
+
+  .kick{ font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:4px; font-size:8.5pt; color:var(--rojov); margin-bottom:2mm; }
+  h2{ font-family:'Rye',serif; font-weight:400; font-size:20pt; color:var(--oro); line-height:1.1; margin-bottom:5mm; }
+  h2::after{ content:""; display:block; width:20mm; height:3px; margin-top:2.5mm;
+    background:repeating-linear-gradient(90deg,var(--rojo) 0 4mm,transparent 4mm 6mm); }
+  h3{ font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:2px; font-size:11pt; color:var(--oroc); margin:6mm 0 2.5mm; }
+  p{ font-size:10pt; color:var(--crema2); margin-bottom:2.5mm; }
+  p strong,b{ color:var(--crema); }
+
+  ul.reqs{ list-style:none; }
+  ul.reqs li{ font-size:10pt; color:var(--crema2); padding:1.5mm 0 1.5mm 6mm; position:relative; border-bottom:1px solid rgba(242,232,213,.08); }
+  ul.reqs li:last-child{ border-bottom:none; }
+  ul.reqs li::before{ content:"▸"; color:var(--rojov); position:absolute; left:0; }
+  ul.reqs li b{ color:var(--crema); }
+
+  .flag{ display:inline-block; font-family:'Oswald',sans-serif; font-size:7.5pt; letter-spacing:1px; text-transform:uppercase;
+    padding:.5mm 2mm; margin-left:2mm; border-radius:2px; vertical-align:middle; }
+  .flag.banda{ background:rgba(216,163,62,.2); color:var(--oroc); border:1px solid var(--oro); }
+  .flag.promo{ background:rgba(200,52,42,.2); color:#f0a59e; border:1px solid var(--rojov); }
+
+  table{ width:100%; border-collapse:collapse; margin-top:3mm; font-size:9pt; }
+  thead th{ background:var(--rojo); color:var(--crema); font-family:'Oswald',sans-serif; text-transform:uppercase;
+    letter-spacing:1px; font-size:8.5pt; padding:2mm; text-align:left; }
+  tbody td{ padding:1.5mm 2mm; border-bottom:1px solid rgba(242,232,213,.12); color:var(--crema2); vertical-align:top; }
+  tbody tr:nth-child(even){ background:rgba(216,163,62,.05); }
+  tbody td:first-child{ color:var(--oroc); font-weight:600; text-align:center; width:10mm; }
+  tbody td b{ color:var(--crema); }
+
+  /* Stage plot */
+  .stage{ margin:4mm 0; }
+  .leyenda{ display:flex; gap:6mm; flex-wrap:wrap; margin-top:3mm; font-family:'Oswald',sans-serif;
+    font-size:8pt; text-transform:uppercase; letter-spacing:1px; color:var(--crema2); }
+  .leyenda span b{ color:var(--oroc); }
+
+  .contacto-box{ border:2px solid var(--oro); padding:6mm; margin-top:5mm; background:var(--negro2); }
+  .contacto-box .em{ font-family:'Rye',serif; color:var(--oroc); font-size:13pt; }
+  .note{ font-size:8.5pt; color:var(--crema2); font-style:italic; margin-top:3mm; }
+</style>
+</head>
+<body>
+
+<!-- PORTADA -->
+<section class="page cover">
+  <img class="logo" src="../assets/logo.jpg" alt="Logo Ilustres Patilludos">
+  <h1>ILUSTRES<br>PATILLUDOS</h1>
+  <div class="doc-type">Rider Técnico</div>
+  <div class="sub">Rider técnico y de hospitality</div>
+  <div class="tag">6 músicos en escena · Chigrebilly · Xixón</div>
+</section>
+
+<!-- FORMACIÓN + PLANO -->
+<section class="page">
+  <p class="kick">Puesta en escena</p>
+  <h2>Formación y escenario</h2>
+  <p>La banda se compone de <strong>6 músicos</strong>. Todos los instrumentos se envían <strong>por línea</strong> (previos propios); la batería se microfona de forma estándar. La banda aporta <strong>mesa digital y monitoraje personal inalámbrico (in-ear)</strong>, por lo que <strong>el monitoraje corre a cargo de la banda</strong>.</p>
+
+  <h3>Plano de escenario (vista superior)</h3>
+  <div class="stage">
+    <svg viewBox="0 0 640 380" width="100%" xmlns="http://www.w3.org/2000/svg" style="border:2px solid var(--oro);background:#1d1712">
+      <style>
+        .box{ fill:#241b13; stroke:#d8a33e; stroke-width:2; }
+        .lbl{ fill:#f2e8d5; font-family:'Oswald',sans-serif; font-size:15px; font-weight:600; text-transform:uppercase; }
+        .sub{ fill:#e8bf6a; font-family:'Oswald',sans-serif; font-size:11px; }
+        .zone{ fill:#e04338; font-family:'Oswald',sans-serif; font-size:13px; letter-spacing:2px; }
+      </style>
+      <!-- fila trasera -->
+      <rect class="box" x="255" y="24" width="130" height="60" rx="4"/>
+      <text class="lbl" x="320" y="50" text-anchor="middle">Batería</text>
+      <text class="sub" x="320" y="70" text-anchor="middle">+ coros</text>
+
+      <rect class="box" x="70" y="34" width="130" height="52" rx="4"/>
+      <text class="lbl" x="135" y="56" text-anchor="middle">Bajo</text>
+      <text class="sub" x="135" y="74" text-anchor="middle">DI (promotor)</text>
+
+      <rect class="box" x="440" y="34" width="140" height="52" rx="4"/>
+      <text class="lbl" x="510" y="56" text-anchor="middle">Eléctrica</text>
+      <text class="sub" x="510" y="74" text-anchor="middle">emul. → DI (promotor)</text>
+
+      <!-- fila delantera -->
+      <rect class="box" x="55" y="180" width="150" height="60" rx="4"/>
+      <text class="lbl" x="130" y="205" text-anchor="middle">Mandolina</text>
+      <text class="sub" x="130" y="224" text-anchor="middle">/ banjo + coros</text>
+
+      <rect class="box" x="245" y="180" width="150" height="60" rx="4"/>
+      <text class="lbl" x="320" y="205" text-anchor="middle">Voz</text>
+      <text class="sub" x="320" y="224" text-anchor="middle">+ guitarra acústica</text>
+
+      <rect class="box" x="435" y="180" width="150" height="60" rx="4"/>
+      <text class="lbl" x="510" y="205" text-anchor="middle">Violín</text>
+      <text class="sub" x="510" y="224" text-anchor="middle">+ coros</text>
+
+      <!-- mesa banda -->
+      <rect x="250" y="285" width="140" height="34" rx="4" fill="#1d1712" stroke="#e04338" stroke-width="2" stroke-dasharray="5 4"/>
+      <text class="sub" x="320" y="307" text-anchor="middle" style="fill:#f0a59e">Mesa banda · XR16 · in-ear</text>
+
+      <!-- público -->
+      <text class="zone" x="320" y="360" text-anchor="middle">▼ ▼ ▼   PÚBLICO   ▼ ▼ ▼</text>
+    </svg>
+  </div>
+  <div class="leyenda">
+    <span><b>Envío por línea</b> · previos propios en todos los instrumentos</span>
+    <span><b>Batería</b> microfonada (kit propio)</span>
+  </div>
+</section>
+
+<!-- NECESIDADES TÉCNICAS + INPUT LIST -->
+<section class="page">
+  <p class="kick">Requerimientos</p>
+  <h2>Necesidades técnicas</h2>
+  <ul class="reqs">
+    <li><b>P.A.</b> Sistema de sonido profesional dimensionado a la sala, con técnico de sala a disposición. <span class="flag promo">Promotor</span></li>
+    <li><b>Mesa y monitoraje</b> La banda aporta mesa digital <b>Behringer XR16</b> y sistema de <b>monitoraje personal inalámbrico (in-ear)</b>. La XR16 puede funcionar como mesa FOH o enviar señal a la mesa del local mediante <b>splitters</b>. <span class="flag banda">Banda</span></li>
+    <li><b>Cajas de inyección (DI)</b> Se necesitan <b>2 cajas de inyección</b>: una para el bajo y otra para la guitarra eléctrica (emulador de amplificadores). <span class="flag promo">Promotor</span></li>
+    <li><b>Backline</b> La banda aporta sus propios instrumentos y previos (Fishman Platinum Pro en la acústica, Fishman ToneDeQ AFX en mandolina/banjo y bajo, pedalera Boss en el violín) y batería. <span class="flag banda">Banda</span></li>
+    <li><b>Corriente</b> Tomas de corriente (schuko) en el escenario: mínimo <b>4 tomas</b> repartidas (2 por lateral). <span class="flag promo">Promotor</span></li>
+    <li><b>Escenario</b> Superficie mínima recomendada de <b>5 × 3 m</b>, estable y cubierta en exteriores. <span class="flag promo">Promotor</span></li>
+    <li><b>Prueba de sonido</b> <b>60 minutos</b> de prueba de sonido antes de la apertura de puertas. <span class="flag promo">Promotor</span></li>
+  </ul>
+
+  <h3>Lista de canales (input list)</h3>
+  <table>
+    <thead><tr><th>CH</th><th>Instrumento</th><th>Fuente / captación</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><b>Bombo</b></td><td>Micrófono (kit propio)</td></tr>
+      <tr><td>2</td><td><b>Caja</b></td><td>Micrófono</td></tr>
+      <tr><td>3</td><td><b>Tom</b></td><td>Micrófono</td></tr>
+      <tr><td>4</td><td><b>Charles / plato</b></td><td>Micrófono / overhead</td></tr>
+      <tr><td>5</td><td><b>Bajo</b></td><td>Línea → caja de inyección (DI) · promotor</td></tr>
+      <tr><td>6</td><td><b>Guitarra eléctrica</b></td><td>Emulador de amplis → caja de inyección (DI) · promotor</td></tr>
+      <tr><td>7</td><td><b>Guitarra acústica</b></td><td>Línea · Fishman Platinum Pro</td></tr>
+      <tr><td>8</td><td><b>Mandolina / banjo</b></td><td>Línea · Fishman ToneDeQ AFX</td></tr>
+      <tr><td>9</td><td><b>Violín</b></td><td>Línea · pedalera Boss</td></tr>
+      <tr><td>10</td><td><b>Voz principal</b></td><td>Micrófono (guitarra acústica)</td></tr>
+      <tr><td>11</td><td><b>Coro — mandolina/banjo</b></td><td>Micrófono</td></tr>
+      <tr><td>12</td><td><b>Coro — violín</b></td><td>Micrófono</td></tr>
+      <tr><td>13</td><td><b>Coro — batería</b></td><td>Micrófono</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- HOSPITALITY -->
+<section class="page">
+  <p class="kick">Camerino y logística</p>
+  <h2>Hospitality</h2>
+  <ul class="reqs">
+    <li><b>Comitiva</b> Viajan <b>6 personas</b> (los músicos).</li>
+    <li><b>Camerino</b> Espacio limpio y cerrado con acceso a aseo, cercano al escenario.</li>
+    <li><b>Catering de cortesía</b> <b>Agua y refrescos</b> en el camerino para toda la comitiva.</li>
+    <li><b>Alojamiento</b> En bolos alejados de Xixón, <b>habitaciones dobles</b> para la comitiva (3 dobles).</li>
+    <li><b>Carga y descarga</b> Debe facilitarse el <b>acceso de la furgoneta</b> para la carga y descarga del equipo, con espacio de aparcamiento cercano durante el evento.</li>
+  </ul>
+
+  <h3>Notas finales</h3>
+  <p>Este rider es orientativo y adaptable a las condiciones de cada sala o festival. Cualquier duda o limitación técnica, contáctanos con antelación y buscamos la mejor solución para que todo salga redondo.</p>
+
+  <div class="contacto-box">
+    <p class="kick" style="margin-bottom:3mm">Contacto técnico y contratación</p>
+    <p class="em">ilustrespatilludos@gmail.com</p>
+    <p style="margin-top:2mm; color:var(--crema2); font-size:9.5pt">Ilustres Patilludos · Xixón, Asturies · Chigrebilly dende 2011</p>
+  </div>
+</section>
+
+</body>
+</html>
