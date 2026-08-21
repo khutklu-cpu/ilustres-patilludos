@@ -72,9 +72,34 @@
   .contacto-box{ border:2px solid var(--oro); padding:6mm; margin-top:5mm; background:var(--negro2); }
   .contacto-box .em{ font-family:'Rye',serif; color:var(--oroc); font-size:13pt; }
   .note{ font-size:8.5pt; color:var(--crema2); font-style:italic; margin-top:3mm; }
+  /* ---- Barra superior (solo pantalla, oculta en el PDF) ---- */
+  .topbar{ position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between;
+    gap:1rem; padding:.7rem 1.1rem; background:rgba(20,16,12,.97); border-bottom:2px solid var(--oro); font-family:'Oswald',sans-serif; }
+  .topbar a{ text-transform:uppercase; letter-spacing:.1em; font-size:.78rem; text-decoration:none; color:var(--crema);
+    border:1px solid var(--oro); padding:.5rem .95rem; transition:.2s; white-space:nowrap; }
+  .topbar a:hover{ background:var(--oro); color:var(--negro); }
+  .topbar .tb-title{ font-family:'Rye',serif; color:var(--oroc); font-size:1rem; letter-spacing:0; }
+  .topbar .tb-dl{ background:var(--rojo); border-color:var(--rojov); color:var(--crema); }
+  .topbar .tb-dl:hover{ background:var(--rojov); color:var(--crema); }
+  @media (max-width:560px){ .topbar .tb-title{ display:none; } }
+  @media print{ .topbar{ display:none !important; } }
+  /* ---- Vista en pantalla (no afecta al PDF) ---- */
+  @media screen{
+    html,body{ background:#0d0a07; }
+    body{ padding-bottom:3rem; }
+    .page{ width:auto; max-width:820px; min-height:auto; margin:1.6rem auto; border:1px solid rgba(216,163,62,.25); box-shadow:0 10px 40px rgba(0,0,0,.6); }
+    .page::after{ position:static; display:block; margin-top:2.4rem; }
+  }
+  @media screen and (max-width:560px){ .page{ padding-left:6vw; padding-right:6vw; } }
 </style>
 </head>
 <body>
+
+<header class="topbar">
+  <a class="tb-back" href="../index.html#documentacion">← Volver</a>
+  <span class="tb-title">Rider</span>
+  <a class="tb-dl" href="Ilustres_Patilludos_rider.pdf" download>⬇ Descargar PDF</a>
+</header>
 
 <!-- PORTADA -->
 <section class="page cover">
