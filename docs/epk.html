@@ -89,6 +89,28 @@
     .page::after{ position:static; display:block; margin-top:2.4rem; }
   }
   @media screen and (max-width:560px){ .page{ padding-left:6vw; padding-right:6vw; } }
+
+  /* ---- Añadidos 24-09-2026: novedad, cifras, trayectoria ---- */
+  .novedad{ border:2px solid var(--rojov); background:linear-gradient(180deg,rgba(200,52,42,.14),rgba(200,52,42,.04));
+    padding:5mm 6mm; margin:4mm 0; }
+  .novedad .et{ font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:3px;
+    font-size:8pt; color:var(--rojov); margin-bottom:2mm; }
+  .novedad .tt{ font-family:'Rye',serif; font-size:15pt; color:var(--crema); line-height:1.15; }
+  .novedad .ss{ font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:2px;
+    font-size:9pt; color:var(--oroc); margin-top:1.5mm; }
+  .novedad p{ margin-top:2.5mm; margin-bottom:0; }
+
+  .cifras{ display:flex; gap:4mm; margin:4mm 0; }
+  .cifras .c{ flex:1; text-align:center; border:1px solid rgba(216,163,62,.35); padding:3.5mm 2mm; background:var(--negro2); }
+  .cifras .n{ font-family:'Rye',serif; font-size:17pt; color:var(--oroc); line-height:1; }
+  .cifras .l{ font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:1.5px;
+    font-size:7pt; color:var(--crema2); margin-top:1.5mm; }
+
+  .hitos li{ font-size:9.5pt; color:var(--crema2); padding:2mm 0 2mm 6mm; position:relative;
+    border-bottom:1px solid rgba(242,232,213,.1); list-style:none; }
+  .hitos li:last-child{ border-bottom:none; }
+  .hitos li::before{ content:"★"; position:absolute; left:0; color:var(--rojov); font-size:8pt; top:2.4mm; }
+  .hitos li b{ color:var(--crema); }
 </style>
 </head>
 <body>
@@ -106,6 +128,7 @@
   <div class="doc-type">EPK</div>
   <div class="sub">Electronic Press Kit</div>
   <div class="tag">Los Reyes del Chigrebilly · Xixón · desde 2011</div>
+  <div class="doc-type" style="margin-top:6mm;border-color:var(--rojov);color:var(--crema);font-size:10pt;letter-spacing:4px">Nuevo single · 2 octubre 2026</div>
 </section>
 
 <!-- BIO + DATOS -->
@@ -131,7 +154,60 @@
       </ul>
     </div>
   </div>
+
+  <div class="novedad">
+    <div class="et">Lo nuevo · en tiendas el 2 de octubre de 2026</div>
+    <div class="tt">«Empieza a Beber»</div>
+    <div class="ss">Single · con José Manuel Tejedor</div>
+    <p>Historia de barra de bar: un tipo duro que se derrumba y un desconocido que le arrastra a seguir
+    bebiendo hasta el amanecer. Folk-punk asturiano, chigrebilly acelerado, para cantar a voces en el
+    chigre. Gaita, contrabajo, guitarra, batería y voces. Abre etapa nueva, con formación renovada.</p>
+    <p style="color:var(--oroc);font-style:italic">«Empieza a beber, que los perdedores no mueren de sed.»</p>
+  </div>
+
+  <div class="cifras">
+    <div class="c"><div class="n">+300</div><div class="l">Conciertos</div></div>
+    <div class="c"><div class="n">15</div><div class="l">Años en activo</div></div>
+    <div class="c"><div class="n">2</div><div class="l">Nominaciones AMAS</div></div>
+    <div class="c"><div class="n">6</div><div class="l">Músicos en escena</div></div>
+  </div>
   <div class="cita">«Sonido no apto a puristas.» Chigrebilly con un pie en Nashville, otro en Dublín y los dos plantados en un llagar asturiano.</div>
+</section>
+
+
+<!-- TRAYECTORIA Y DIRECTO -->
+<section class="page">
+  <p class="kick">Dónde hemos estado</p>
+  <h2>Trayectoria y directo</h2>
+
+  <p class="lead">El Chigrebilly nació de chigre en chigre y se les fue de las manos. Más de
+  <strong>300 conciertos</strong> desde 2011 en chigres, salas y festivales de toda España.</p>
+
+  <h3>Hitos</h3>
+  <ul class="hitos">
+    <li><b>La Riviera (Madrid)</b> — junto a Los Berrones</li>
+    <li><b>Gruta 77 (Madrid)</b> — asalto a la sala de referencia del rock estatal</li>
+    <li><b>Tsunami Xixón</b> — el festival grande de casa</li>
+    <li><b>Sala Savoy (Gijón)</b> — donde nacieron y se criaron</li>
+    <li><b>Nominados a Mejor Directo</b> — Premios AMAS 2018</li>
+    <li><b>Nominados a Mejor Videoclip</b> — Premios AMAS 2020, por «Espicha o muerre»</li>
+  </ul>
+
+  <h3>Han compartido cartel con</h3>
+  <p>Los Berrones · Celtas Cortos · Dixebra · Nuberu</p>
+
+  <h3>Colaboraciones</h3>
+  <ul class="plain">
+    <li><b>José Manuel Tejedor</b>«Empieza a Beber» — single 2026</li>
+    <li><b>Xune Elipe (Dixebra)</b>«Espicha o muerre» — single 2019</li>
+    <li><b>Chus Pedro (Nuberu)</b>«Chalaneru» — single 2019</li>
+  </ul>
+
+  <h3>Qué se llevan a una sala</h3>
+  <p>Seis músicos, <strong>backline propio</strong> y <strong>mesa digital con monitoraje in-ear
+  inalámbrico</strong>: la banda puede hacerse cargo de su propio monitoraje. Todos los instrumentos van
+  por línea con previos propios; solo la batería necesita microfonía de sala. Rider técnico completo,
+  con plano de escenario y lista de canales, en <b style="color:var(--oroc)">rider.html</b>.</p>
 </section>
 
 <!-- MÚSICA + VÍDEOS + CONTACTO -->
@@ -141,27 +217,30 @@
 
   <h3>Discografía</h3>
   <div class="discos">
-    <div class="disco"><img src="../assets/cover_chigrebilly.jpg" alt="Chigrebilly"><div class="t">Chigrebilly</div><div class="m">LP · 2017</div></div>
+    <div class="disco"><img src="../assets/cover_chigrebilly.jpg" alt="Chigrebilly"><div class="t">Chigrebilly</div><div class="m">LP · 2017 · 8 temas</div></div>
     <div class="disco"><img src="../assets/cover_espicha.jpg" alt="Espicha o muerre"><div class="t">Espicha o muerre / Chalaneru</div><div class="m">Singles · 2019</div></div>
   </div>
+  <ul class="plain" style="margin-top:3mm">
+    <li><b>Próximo lanzamiento</b>«Empieza a Beber» — single con José Manuel Tejedor · 2 de octubre de 2026 · distribuye CD Baby</li>
+  </ul>
 
   <h3>Videoclips oficiales</h3>
   <div class="videos">
-    <div class="v"><span class="play">▶</span><b>Sidra en el llagar</b><span class="u">youtu.be/PCQ0moQJkFk</span></div>
-    <div class="v"><span class="play">▶</span><b>Borracho, Jodido y Tatuado</b><span class="u">youtu.be/GSngH6CLJ7I</span></div>
-    <div class="v"><span class="play">▶</span><b>Espicha o Muerre</b> (con Xune Elipe)<span class="u">youtu.be/8XyXyWSQyDE</span></div>
-    <div class="v"><span class="play">▶</span><b>Chigrebilly</b><span class="u">youtu.be/4cGYRP_Lvlk</span></div>
+    <div class="v"><span class="play">▶</span><b>Sidra en el llagar</b><a class="u" href="https://youtu.be/PCQ0moQJkFk">youtu.be/PCQ0moQJkFk</a></div>
+    <div class="v"><span class="play">▶</span><b>Borracho, Jodido y Tatuado</b><a class="u" href="https://youtu.be/GSngH6CLJ7I">youtu.be/GSngH6CLJ7I</a></div>
+    <div class="v"><span class="play">▶</span><b>Espicha o Muerre</b> (con Xune Elipe)<a class="u" href="https://youtu.be/8XyXyWSQyDE">youtu.be/8XyXyWSQyDE</a></div>
+    <div class="v"><span class="play">▶</span><b>Chigrebilly</b><a class="u" href="https://youtu.be/4cGYRP_Lvlk">youtu.be/4cGYRP_Lvlk</a></div>
   </div>
 
   <h3>Enlaces y redes</h3>
   <div class="datos">
     <div class="col"><ul class="plain">
-      <li><b>Spotify</b>Ilustres Patilludos</li>
+      <li><b>Spotify</b><a href="https://open.spotify.com/artist/5Wh38G1BVhSeEWwtgXh3Q7" style="color:var(--crema2)">open.spotify.com/artist/5Wh38G1BVhSeEWwtgXh3Q7</a></li>
       <li><b>Apple Music</b>Ilustres Patilludos</li>
       <li><b>YouTube</b>Ilustres Patilludos</li>
     </ul></div>
     <div class="col"><ul class="plain">
-      <li><b>Instagram</b>@ilustrespatilludos</li>
+      <li><b>Instagram</b><a href="https://instagram.com/ilustrespatilludos" style="color:var(--crema2)">@ilustrespatilludos</a></li>
       <li><b>Facebook</b>los.ilustres.patilludos</li>
       <li><b>X / Twitter</b>@ipatilludos</li>
     </ul></div>
@@ -170,6 +249,18 @@
   <div class="contacto-box">
     <p class="kick" style="margin-bottom:3mm">Contacto · prensa y contratación</p>
     <p class="em">ilustrespatilludos@gmail.com</p>
+    <div class="datos" style="margin-top:4mm">
+      <div class="col"><ul class="plain">
+        <li><b>Disponibilidad</b>Toda España · salas, fiestas y festivales</li>
+        <li><b>Contratación</b>Directa, sin intermediarios</li>
+      </ul></div>
+      <div class="col"><ul class="plain">
+        <li><b>Caché</b>A medida según sala y fecha — escríbenos y te pasamos presupuesto</li>
+        <li><b>Material técnico</b>Rider y plano de escenario en la web</li>
+      </ul></div>
+    </div>
+    <p style="margin-top:3mm;font-size:9pt">Fotos de prensa en alta resolución y logotipos:
+    a disposición de medios y promotores, pídelos por correo y te los mandamos el mismo día.</p>
   </div>
 </section>
 
